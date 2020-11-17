@@ -11,6 +11,10 @@ export interface SagaPromiseOptions<S, A extends Action<any> = any> {
 
 export type SagaPromiseFunc<S, A extends Action<any> = any, SA extends Action<any> = any> = (options: SagaPromiseOptions<S, SA>, action: A, ...rest: any) => Promise<any>
 
+export function makeSagaPromiseFunc<S, A extends Action<any> = any, SA extends Action<any> = any>(func: SagaPromiseFunc<S, A, SA>) {
+	return func
+}
+
 /**
  * Create a function to wrap promise functions in a generator function so promises can be used in
  * `takeEvery`.

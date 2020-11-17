@@ -34,8 +34,13 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
     return r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.makeSagaPromiseFunc = void 0;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 var effects_1 = require("redux-saga/effects");
+function makeSagaPromiseFunc(func) {
+    return func;
+}
+exports.makeSagaPromiseFunc = makeSagaPromiseFunc;
 /**
  * Create a function to wrap promise functions in a generator function so promises can be used in
  * `takeEvery`.
